@@ -181,6 +181,16 @@ const char* ReadEventSink::get_data(int& size) const
 }
 
 /**
+ * Get the current active file descriptor
+ *
+ * @return   The internal file descriptor
+ */
+int ReadEventSink::get_fd() const
+{
+	return _fd;
+}
+
+/**
  * Poll for new data. Note this isn't necessary before invoking any
  * of the read functions, which indicate whether or not any data
  * is indeed available for reading. See the read* documentation for

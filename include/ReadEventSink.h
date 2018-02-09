@@ -127,6 +127,8 @@ public:
 
 	const char* get_data(int& size) const;
 
+	int get_fd() const;
+
 	err_code poll(int64 timeout= 0) const;
 
 	err_code read(const std::string& delim = "",
