@@ -44,28 +44,28 @@ public:
 	typedef enum
 	{
 		/** New data was read and processed successfully */
-		SUCCESS    = 0,
+		RES_SUCCESS    = 0,
 
 		/** No data available for reading on the
 		    file descriptor */
-		NO_DATA    = 1,
+		RES_NO_DATA    = 1,
 
 		/** An error occured while attempting to read
 		    from the file descriptor */
-		READ_ERR   = 2,
+		RES_READ_ERR   = 2,
 
 		/** Memory allocation error  */
-		MEMORY_ERR = 4,
+		RES_MEMORY_ERR = 4,
 
 		/** The reader returned "false" while processing
 		    the data */
-		READER_ERR = 8,
+		RES_READER_ERR = 8,
 
 		/** Either a reader was not properly attached or
 		    the file descriptor is bad */
-		USIG_ERR   = 16
+		RES_USIG_ERR   = 16
 
-	} err_code;
+	} err_code_t;
 
 	ReadEventSink();
 
