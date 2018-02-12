@@ -129,27 +129,27 @@ public:
 
 	int get_fd() const;
 
-	err_code poll(int64 timeout= 0) const;
+	err_code_t poll(int64 timeout= 0) const;
 
-	err_code read(const std::string& delim = "",
-				  bool clear = false,
-				  int64 timeout = 0);
+	err_code_t read(const std::string& delim = "",
+					bool clear = false,
+					int64 timeout = 0);
 	
-	err_code read(size_t nbytes,
-				  bool clear = false,
-				  int64 timeout = 0);
+	err_code_t read(size_t nbytes,
+					bool clear = false,
+					int64 timeout = 0);
 
-	err_code read_until(const std::string& delim,
-						bool clear = false,
-						int64 timeout = 0);
+	err_code_t read_until(const std::string& delim,
+						  bool clear = false,
+						  int64 timeout = 0);
 
-	err_code read_until(size_t nbytes,
-						bool clear = false,
-						int64 timeout = 0);
+	err_code_t read_until(size_t nbytes,
+						  bool clear = false,
+						  int64 timeout = 0);
 
 private:
 
-	err_code _read(bool clear, int64 timeout);
+	err_code_t _read(bool clear, int64 timeout);
 
 	char*       _buf;
 	size_t      _buf_len;
@@ -163,6 +163,6 @@ private:
 /**
  * Simplified return code type for convenience
  */
-typedef ReadEventSink::err_code err_code;
+typedef ReadEventSink::err_code_t err_code_t;
 
 #endif
